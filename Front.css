@@ -1,0 +1,49 @@
+body {
+background-color: #5AE9DD;
+font-family: 'Inter', sans-serif;
+}
+
+h2, h3 {
+color: #222;
+}
+
+.card {
+background: #fdfdfd;
+padding: 1rem;
+border: 1px solid #ddd;
+box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+border-radius: 12px;
+}
+
+.card h4 {
+margin-bottom: 1rem;
+}
+
+.card button {
+background: #6949ff;
+border: none;
+color: white;
+padding: 6px 12px;
+border-radius: 6px;
+}
+
+.btn-primary {
+background-color: #6949ff;
+border: none;
+border-radius: 8px;
+padding: 10px 20px;
+font-weight: 600;
+}
+
+.btn-light {
+font-weight: 600;
+}
+
+.form-control {
+border-radius: 8px;
+}
+
+.bottonmp3{
+    background-color: rgb(255, 255, 255);
+}
+
