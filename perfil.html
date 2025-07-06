@@ -1,0 +1,221 @@
+<html lang="es" x-data="{ sidebarOpen: false }">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Perfil – Petifu</title>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #FFF1DD;
+    }
+
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #3C97B3;
+        padding: 10px 20px;
+    }
+
+    .top-title {
+        font-size: 24px;
+        font-weight: bold;
+        background-color: #FFF1DD;
+        padding: 5px 20px;
+    }
+
+    .logo-icon {
+        height: 50px;
+        cursor: pointer;
+    }
+
+    .main-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 40px;
+        gap: 60px;
+        align-items: flex-start;
+    }
+
+    .profile-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .profile-pic {
+        width: 350px;
+        height: 450px;
+        background-color: #555;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 22px;
+        margin-left: 250px;
+        margin-top: 50px;
+    }
+
+    .profile-pic input {
+        margin-top: 50px;
+    }
+
+    .form-section {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 400px;
+        margin-right: 260px;
+        margin-top: 80px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input, select {
+        padding: 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .request-button {
+        margin-top: 20px;
+        background-color: #3C97B3;
+        color: white;
+        font-weight: bold;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .request-button:hover {
+        background-color: #347f95;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #3C97B3;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        padding: 60px 20px;
+        box-sizing: border-box;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .menu-button {
+        background-color: #FFF1DD;
+        color: #000;
+        font-weight: bold;
+        border: none;
+        padding: 12px 20px;
+        margin: 10px 0;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .menu-button:hover {
+        background-color: #ffe1b3;
+    }
+</style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="top-title">Pedido</div>
+    <img class="logo-icon" src="unnamed (2).png" alt="Logo" @click="sidebarOpen = !sidebarOpen">
+</div>
+
+<!-- Sidebar -->
+<div :class="{ 'sidebar': true, 'open': sidebarOpen }">
+    <button class="menu-button" onclick="location.href='index.html'">Inicio</button>
+    <button class="menu-button" onclick="location.href='sobre.html'">Sobre la marca</button>
+    <button class="menu-button" onclick="location.href='servicios.html'">Servicios</button>
+    <button class="menu-button" onclick="location.href='nosotros.html'">Nosotros</button>
+    <button class="menu-button" onclick="location.href='testimonios.html'">Testimonios</button>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <div class="profile-section">
+        <div class="profile-pic">
+        <label for="fotoInput">Subir Foto
+        <input type="file" accept="image/*" id="fotoInput" onchange="previewFoto(event)" style="display: none;">
+        </label>
+        </div>
+
+    </div>
+
+    <div class="form-section">
+        <label for="nombre">Nombre y Apellido:</label>
+        <input type="text" id="nombre" placeholder="Ej: Juan Pérez">
+
+        <label for="email">Mail:</label>
+        <input type="email" id="email" placeholder="ejemplo@mail.com">
+
+        <label for="fecha">Fecha del evento:</label>
+        <input type="date" id="fecha">
+
+        <label for="servicio">Tipo de Servicio:</label>
+        <select id="servicio">
+            <option value="coctel">Servicio de Cóctel</option>
+            <option value="banquete">Banquete Formal</option>
+            <option value="cumpleaños">Cumpleaños</option>
+            <option value="casamiento">Casamiento</option>
+            <option value="casamiento">Evento Privado</option>
+        </select>
+
+        <button class="request-button" onclick="enviarSolicitud()">Request Service</button>
+    </div>
+</div>
+
+<script>
+function previewFoto(event) {
+    const reader = new FileReader();
+    reader.onload = function () {
+        const preview = document.getElementById('fotoPreview');
+        preview.style.backgroundImage = `url(${reader.result})`;
+        preview.style.backgroundSize = 'cover';
+        preview.style.backgroundPosition = 'center';
+        preview.innerText = '';
+    }
+    reader.readAsDataURL(event.target.files[0]);
+}
+
+function enviarSolicitud() {
+    const nombre = document.getElementById('nombre').value;
+    const email = document.getElementById('email').value;
+    const fecha = document.getElementById('fecha').value;
+    const servicio = document.getElementById('servicio').value;
+
+    if (!nombre || !email || !fecha || !servicio) {
+        alert("Por favor completá todos los campos antes de continuar.");
+        return;
+    }
+
+    alert(`Solicitud enviada:\nNombre: ${nombre}\nEmail: ${email}\nFecha: ${fecha}\nServicio: ${servicio}`);
+}
+</script>
+
+</body>
+</html>
