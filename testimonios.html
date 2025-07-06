@@ -7,113 +7,115 @@
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 <style>
     body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #FFF1DD;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #FFF1DD;
     }
 
     .top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #3C97B3;
-    padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #3C97B3;
+        padding: 10px 20px;
     }
 
     .top-title {
-    font-size: 24px;
-    font-weight: bold;
-    background-color: #FFF1DD;
-    padding: 5px 20px;
+        font-size: 24px;
+        font-weight: bold;
+        background-color: #FFF1DD;
+        padding: 5px 20px;
     }
 
     .logo-icon {
-    height: 50px;
-    cursor: pointer;
+        height: 50px;
+        cursor: pointer;
     }
 
     .main-content {
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 40px;
-    gap: 40px;
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 40px;
+        gap: 40px;
     }
 
-
     .image-gallery img {
-    width: 270px;
-    height: auto;
+        width: 370px;
+        height: auto;
+        margin-left: 100px;
     }
 
     .testimonials {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    padding: 20px;
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+        padding: 20px;
+        margin-right: 100px;
+        margin-top: 50px;
     }
 
     .testimonials p {
-    margin-bottom: 20px;
-    font-size: 15px;
-    line-height: 1.4;
+        margin-bottom: 22px;
+        font-size: 18px;
+        line-height: 1.5;
     }
 
     .testimonials strong {
-    font-size: 16px;
+        font-size: 16px;
     }
 
     .add-button {
-    margin-top: 20px;
-    background-color: #3C97B3;
-    color: white;
-    font-weight: bold;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 15px;
+        margin-top: 20px;
+        background-color: #3C97B3;
+        color: white;
+        font-weight: bold;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
     }
 
     .add-button:hover {
-    background-color: #347f95;
+        background-color: #347f95;
     }
 
     /* Sidebar */
     .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    background-color: #3C97B3;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    padding: 60px 20px;
-    box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #3C97B3;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        padding: 60px 20px;
+        box-sizing: border-box;
     }
 
     .sidebar.open {
-    transform: translateX(0);
+        transform: translateX(0);
     }
 
     .menu-button {
-    background-color: #FFF1DD;
-    color: #000;
-    font-weight: bold;
-    border: none;
-    padding: 12px 20px;
-    margin: 10px 0;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    font-size: 16px;
+        background-color: #FFF1DD;
+        color: #000;
+        font-weight: bold;
+        border: none;
+        padding: 12px 20px;
+        margin: 10px 0;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        font-size: 16px;
     }
 
     .menu-button:hover {
-    background-color: #ffe1b3;
+        background-color: #ffe1b3;
     }
 </style>
 </head>
@@ -121,34 +123,113 @@
 
 <!-- Top Bar -->
 <div class="top-bar">
-<div class="top-title">TESTIMONIOS</div>
-<img class="logo-icon" src="unnamed (2).png" alt="Logo" @click="sidebarOpen = !sidebarOpen">
+    <div class="top-title">TESTIMONIOS</div>
+    <img class="logo-icon" src="unnamed (2).png" alt="Logo" @click="sidebarOpen = !sidebarOpen">
 </div>
 
 <!-- Sidebar -->
 <div :class="{ 'sidebar': true, 'open': sidebarOpen }">
-<button class="menu-button" onclick="location.href='index.html'">Inicio</button>
-<button class="menu-button" onclick="location.href='sobre.html'">Sobre la marca</button>
-<button class="menu-button" onclick="location.href='servicios.html'">Servicios</button>
-<button class="menu-button" onclick="location.href='nosotros.html'">Nosotros</button>
-<button class="menu-button" onclick="location.href='perfil.html'">Perfil</button>
+    <button class="menu-button" onclick="location.href='index.html'">Inicio</button>
+    <button class="menu-button" onclick="location.href='sobre.html'">Sobre la marca</button>
+    <button class="menu-button" onclick="location.href='servicios.html'">Servicios</button>
+    <button class="menu-button" onclick="location.href='nosotros.html'">Nosotros</button>
+    <button class="menu-button" onclick="location.href='perfil.html'">Perfil</button>
 </div>
 
 <!-- Main Content -->
 <div class="main-content">
-<!-- Galería de Imágenes -->
-<div class="image-gallery">
-    <img src="b9e2a9e4ce0d281668aefcd6f52bcd22.jpg" alt="Imagen 1">
+    <!-- Galería de Imágenes -->
+    <div class="image-gallery">
+        <img src="b9e2a9e4ce0d281668aefcd6f52bcd22.jpg" alt="Imagen 1">
+    </div>
+
+<!-- Testimonios --> 
+<div class="testimonials" id="bloque-testimonios">
+<p><strong>Victoria Meinrath:</strong><br>Muy buen servicio, recomendado 10 de 10, muy variado y de buena calidad</p>
+<p><strong>Olivia Palomino:</strong><br>Llegaron a tiempo, la comida perfecta para la cantidad de gente. Servicio excelente, lo volvería a contratar para todos mis eventos.</p>
+<p><strong>Solvej Soding:</strong><br>La comida espectacular, las personas muy amables. Muy recomendable, le mando felicitaciones a la chef.</p>
+
+<div id="testimonios-guardados"></div>
+
+<button class="add-button" id="mostrar-formulario">Agregar testimonio</button>
+
+<div id="formulario-testimonio" style="display: none; margin-top: 15px;">
+    <h3>Calificá nuestro servicio</h3>
+    <select id="rating" required>
+    <option value="" disabled selected>Elige una opción</option>
+    <option value="1">⭐</option>
+    <option value="2">⭐⭐</option>
+    <option value="3">⭐⭐⭐</option>
+    <option value="4">⭐⭐⭐⭐</option>
+    <option value="5">⭐⭐⭐⭐⭐</option>
+    </select>
+    <br><br>
+    <input type="text" id="nombre" placeholder="Nombre completo" required style="width: 100%; padding: 8px; margin-bottom: 10px;">
+    <input type="email" id="email" placeholder="Correo electrónico" required style="width: 100%; padding: 8px; margin-bottom: 10px;">
+    <textarea id="comentario" placeholder="Escribí tu testimonio aquí..." rows="4" style="width: 100%; padding: 8px;"></textarea>
+    <br><br>
+    <button class="add-button" onclick="guardarTestimonio()">Enviar testimonio</button>
+</div>
 </div>
 
-<!-- Testimonios -->
-<div class="testimonials">
-    <p><strong>Victoria Meinrath:</strong><br>Muy buen servicio, recomendado 10 de 10, muy variado y de buena calidad</p>
-    <p><strong>Olivia Palomino:</strong><br>Llegaron a tiempo la comida perfecta para la cantidad de gente, el servicio excelente, lo volvería a contratar para todos mis eventos y funciones</p>
-    <p><strong>Solvej Soding:</strong><br>La comida espectacular, la personas muy amables, muy recomendable, le mando felicitaciones a la chef</p>
-    <button class="add-button" onclick="window.location.href='login.html'">Agregar un testimonio</button>
-</div>
-</div>
+<script>
+document.getElementById("mostrar-formulario").addEventListener("click", function () {
+const form = document.getElementById("formulario-testimonio");
+form.style.display = form.style.display === "none" ? "block" : "none";
+});
+
+function guardarTestimonio() {
+const rating = document.getElementById('rating').value;
+const nombre = document.getElementById('nombre').value.trim();
+const email = document.getElementById('email').value.trim();
+const comentario = document.getElementById('comentario').value.trim();
+
+if (!rating || !nombre || !email || !comentario) {
+    alert("Por favor, completá todos los campos antes de enviar.");
+    return;
+}
+
+const nuevo = {
+    nombre: nombre,
+    comentario: comentario,
+    rating: parseInt(rating)
+};
+
+  // Guardar en localStorage
+let testimonios = JSON.parse(localStorage.getItem('testimonios')) || [];
+testimonios.push(nuevo);
+localStorage.setItem('testimonios', JSON.stringify(testimonios));
+
+  // Mostrarlo en la página
+mostrarTestimonios();
+
+  // Limpiar formulario
+document.getElementById('rating').value = "";
+document.getElementById('nombre').value = "";
+document.getElementById('email').value = "";
+document.getElementById('comentario').value = "";
+
+alert("¡Gracias por tu testimonio!");
+}
+
+function mostrarTestimonios() {
+const contenedor = document.getElementById('testimonios-guardados');
+contenedor.innerHTML = "";
+
+const testimonios = JSON.parse(localStorage.getItem('testimonios')) || [];
+
+testimonios.forEach(testimonio => {
+    const p = document.createElement('p');
+    p.innerHTML = `<strong>${testimonio.nombre}:</strong><br>${testimonio.comentario}<br><span style="color: #ffc107;">${'⭐'.repeat(testimonio.rating)}</span>`;
+    contenedor.appendChild(p);
+});
+}
+
+// Mostrar testimonios guardados al cargar
+window.onload = mostrarTestimonios;
+</script>
+
+
 
 </body>
 </html>

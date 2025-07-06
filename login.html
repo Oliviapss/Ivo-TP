@@ -48,7 +48,7 @@ return {
     let user = users.find(user => user.email === this.email && user.password === this.password);
     if (user) {
         localStorage.setItem('currentUser', JSON.stringify(user));
-        window.location.href = 'perfil.html'; // Redirect to profile page
+        window.location.href = 'testimonios.html'; // Redirect to profile page
     } else {
         this.error = true;
     }
