@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es" x-data="{ sidebarOpen: false }" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sobre la Marca – Petifu</title>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FFF1DD;
+    }
+
+    .container {
+    padding: 20px 40px;
+    }
+
+    .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3C97B3;
+    padding: 30px 20px;
+    }
+
+    .top-title {
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #FFF1DD;
+    padding: 5px 25px;
+    
+    }
+
+    .logo-icon {
+    height: 50px;
+    cursor: pointer;
+    }
+
+    .text-section {
+    margin-top: 30px;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 800px;
+    }
+
+    .image-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    }
+
+    .food-img {
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* Sidebar */
+    .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #3C97B3;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    }
+
+    .sidebar.open {
+    transform: translateX(0);
+    }
+
+    .menu-button {
+    background-color: #FFF1DD;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px 0;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    }
+
+    .menu-button:hover {
+    background-color: #ffe1b3;
+    }
+
+</style>
+</head>
+<body x-data="{ sidebarOpen: false }">
+
+<!-- Top bar -->
+<div class="top-bar">
+    <div class="top-title">SOBRE LA MARCA</div>
+    <img class="logo-icon" src="unnamed (2).png" alt="Logo" @click="sidebarOpen = !sidebarOpen">
+</div>
+
+<!-- Sidebar desplegable -->
+<div :class="{ 'sidebar': true, 'open': sidebarOpen }">
+    <button class="menu-button" onclick="location.href='index.html'">Inicio</button>
+    <button class="menu-button" onclick="location.href='testimonios.html'">Testimonios</button>
+    <button class="menu-button" onclick="location.href='servicios.html'">Servicios</button>
+    <button class="menu-button" onclick="location.href='nosotros.html'">Nosotros</button>
+    <button class="menu-button" onclick="location.href='perfil.html'">Perfil</button>
+</div>
+
+<!-- Contenido -->
+<div class="container">
+    <div class="text-section">
+    Comida copetín, para servir en eventos y que cada bocado sea diferente.  
+    Ejemplos: empanadas, copetín, tartitas, taquitos, tostadas y muchos más  
+    pero todo lo que no sea para llenar sino para que las personas se mantengan  
+    alegres y energéticas en sus juntadas.
+    </div>
+
+    <div class="image-row">
+    <img class="food-img" src="e0953b26b842e6eb5cfe46e6628e0b1f.jpg" alt="Comida 1">
+    <img class="food-img" src="97a1054e540a26c468eaa4bbd25bf3b0.jpg" alt="Comida 2">
+    </div>
+</div>
+
+</body>
+</html>

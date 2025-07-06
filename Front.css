@@ -1,16 +1,15 @@
 body {
-background-color: #5AE9DD;
+background-color: #3C97B3;
 font-family: 'Inter', sans-serif;
 }
 
 h2, h3 {
-color: #222;
+color: #575757;
 }
 
 .card {
-background: #fdfdfd;
+background: #FFF1DD;
 padding: 1rem;
-border: 1px solid #ddd;
 box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 border-radius: 12px;
 }
@@ -20,15 +19,15 @@ margin-bottom: 1rem;
 }
 
 .card button {
-background: #6949ff;
+background: #49A1BC;
 border: none;
-color: white;
+color: #FFF1DD;
 padding: 6px 12px;
 border-radius: 6px;
 }
 
 .btn-primary {
-background-color: #6949ff;
+background-color: #49A1BC;
 border: none;
 border-radius: 8px;
 padding: 10px 20px;

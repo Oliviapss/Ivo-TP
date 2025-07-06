@@ -7,7 +7,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
-<body class="d-flex justify-content-center align-items-center min-vh-100" style="background-color: #65d6c7;">
+<body class="d-flex justify-content-center align-items-center min-vh-100" style="background-color: #49A1BC;">
 
 <div class="card p-4 shadow" style="width: 100%; max-width: 400px;">
 <h2 class="text-center mb-4">Register</h2>
@@ -19,6 +19,10 @@
     <div class="mb-3">
     <label for="password" class="form-label">Password</label>
     <input type="password" id="password" class="form-control" x-model="password" required>
+    </div>
+    <div class="mb-3">
+    <label for="Nombre completo" class="form-label">Nombre Completo</label>
+    <input type="Nombre completo" id="Nombre completo" class="form-control" x-model="Nombre completo" required>
     </div>
     <template x-if="error">
     <div class="alert alert-danger" role="alert">
